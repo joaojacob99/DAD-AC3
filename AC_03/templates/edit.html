@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+</head>
+<body>
+    <h1>Editar Aluno {{aluno.nome}}</h1>
+        <table border="1">
+            <form action="/edit/{{aluno.id}}" method="POST">
+             <tr>
+                 <td>Digite seu RA</td>
+                <td>
+                    <input type="text" name="ra"  value="{{aluno.ra}}" />
+                </td> 
+            </tr>       
+            
+            <tr>
+                <td>Digite seu nome</td>
+                <td>
+                    <input type="text" name="nome"  value="{{aluno.nome}}" />
+                </td>
+            </tr>    
+            
+            <tr>
+                <td>Digite seu Email</td>
+                <td>
+                    <input type="text" name="email"  value="{{aluno.email}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Digite sua rua</td>
+                <td>
+                    <input type="text" name="logradouro"  value="{{aluno.logradouro}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Digite o numero da sua casa</td>
+                <td>
+                    <input type="text" name="numero"  value="{{aluno.numero}}" />
+                </td>
+            </tr>        
+            <tr>
+                <td>Digite seu Cep</td>
+                <td>
+                    <input type="text" name="cep"  value="{{aluno.cep}}" />
+                </td>
+            </tr>    
+            <tr>
+                <td>Digite seu Bairro</td>
+                <td> 
+                    <input type="text" name="bairro"  value="{{aluno.bairro}}" />
+                </td>   
+            </tr>
+            <tr>    
+                <th colspan="2">
+                    <input type="submit" value="Enviar" />
+                </th>    
+             </tr>   
+            </form>
+        </table>    
+</body>
+</html>

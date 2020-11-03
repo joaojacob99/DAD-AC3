@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+    <h1>Cadastro de Cliente</h1>
+    <a href="/add"><img src="{{ url_for('static', filename='imagens/adicionar-ficheiro.png')}}">
+    </a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>RA</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Logradouro</th>
+                <th>Número</th>
+                <th>C.E.P</th>
+                <th>Bairro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>    
+        <tbody>
+            {% for a in alunos %}
+            <tr>
+                <td>{{a.ra}}</td>
+                <td>{{a.nome}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.logradouro}}</td>
+                <td>{{a.numero}}</td>
+                <td>{{a.cep}}</td>
+                <td>{{a.bairro}}</td>
+                <td>
+                    <a href="/edit/{{a.id}}">
+                        <img src="{{ url_for('static', filename='imagens/editar.png')}}">
+                    </a>
+                    <a href="/delete/{{a.id}}">
+                        <img src="{{ url_for('static', filename='imagens/lixeira.png')}}">
+                    </a>  
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="{{url_for('static',filename='css/bootstrap.min.js')}}">
+    </script>
+</body>
+</html>
